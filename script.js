@@ -55,10 +55,7 @@ function consoleLogBooks() {
 function showinfo() {
  record.forEach((record) => {
  document.querySelector(".u").innerHTML = record.fields.phrase;
-    const p = document.innerHTML("p");
-    p.innerText = record.fields.phrase;
-    document.body.appendChild(p);
-    p.classList.add("u");
+ document.querySelector(".word").innerHTML = record.fields.word;
    });
 }
 
