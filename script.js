@@ -51,12 +51,25 @@ function consoleLogBooks() {
   });
 }
 
+//funtion works but is only brining in one line from phrases.
 function showinfo() {
-  record.forEach((record) => {
-  document.querySelector(".u").innerHTML = record.fields.phrase;
-    //const p = document.innerHTML("p");
-   // p.innerText = record.fields.phrase;
-    //document.body.appendChild(p);
-   // p.classList.add("u");
-  });
+ record.forEach((record) => {
+ document.querySelector(".u").innerHTML = record.fields.phrase;
+    const p = document.innerHTML("p");
+    p.innerText = record.fields.phrase;
+    document.body.appendChild(p);
+    p.classList.add("u");
+   });
 }
+
+
+//funtion works but makes seperate p tags for each phrase. I want them to be in one big paragraph.
+// function showinfo() {
+//   console.log("showinfo()");
+//   record.forEach((record) => {
+//     const p = document.createElement("p");
+//     p.innerText = record.fields.phrase;
+//     document.body.appendChild(p);
+//     p.classList.add("u")
+//   });
+// }
