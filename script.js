@@ -51,7 +51,7 @@ function consoleLogBooks() {
   });
 }
 
-//funtion works but is only brining in one line from phrases.
+//funtion works but is only bringing in one line from phrases. I need all of them.
 function showinfo() {
  record.forEach((record) => {
  document.querySelector(".u").innerHTML = record.fields.phrase;
