@@ -40,7 +40,7 @@ function gotAllBooks(err) {
 
   // call functions to log and show the books
   consoleLogBooks();
-  showBooks();
+  showinfo();
 }
 
 // just loop through the books and console.log them
@@ -51,7 +51,7 @@ function consoleLogBooks() {
   });
 }
 
-function showBooks() {
+function showinfo() {
   record.forEach((record) => {
   document.querySelector(".u").innerHTML = record.fields.phrase;
     //const p = document.innerHTML("p");
