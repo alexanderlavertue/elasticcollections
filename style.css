@@ -23,8 +23,8 @@ body{
 
   .word{
     position: relative;
-    color: white;
-    background-color: blue;
+    color: black;
+    background-color: white;
     width: min-content;
   }
 
