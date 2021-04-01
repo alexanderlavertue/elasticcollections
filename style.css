@@ -3,17 +3,33 @@
     src: url("helvetica-light-condensed.woff2") ;
 }
 
-body{
-    background-color: #0033B7;
-    
+@font-face {
+font-family: monospace821;
+src: url("Bitstream - Monospac821 BT Roman.woff2") ;
 }
 
-.u { 
+body{
+    background-color: #0033B7;
+    overflow-x: hidden;
+}
+
+.footer {
+ background-color: white;
+ width: 120vw;
+ height: 4rem;
+margin-left: -2rem;
+margin-top: 49rem;
+position: fixed;
+
+}
+
+.maintext { 
     font-family: helvetica;
     font-size: 4rem;
     text-transform: uppercase;
     color: white;
     margin-top: 0rem;
+    line-height: 4rem;
 }
 
 .img1{
@@ -26,6 +42,8 @@ body{
     color: black;
     background-color: white;
     width: min-content;
+    font-family: monospace821;
+    font-size: 2.5rem;
   }
 
   #contain{

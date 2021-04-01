@@ -1,3 +1,13 @@
+var wordimg = document.querySelectorAll('.wordimg')
+var numbers = ['10%','20','30%', '40%', '50%', '60%', '70%', '80%', '0%', '5%'] 
+
+//Makes images positon random on page load
+var body = document.querySelector("body")
+body.onload = function(){
+   wordimg.forEach((img, i)=>{
+      img.style.left = numbers[Math.floor((Math.random() * 10) + 1)];
+   })
+};
 
 
 //gets info from airtable
@@ -54,7 +64,7 @@ function consoleLogBooks() {
 //funtion works but is only bringing in one line from phrases. I need all of them.
 function showinfo() {
  record.forEach((record) => {
- document.querySelector(".u").innerHTML = record.fields.phrase;
+ document.querySelector(".maintext").innerHTML = record.fields.phrase;
  document.querySelector(".word").innerHTML = record.fields.word;
    });
 }
