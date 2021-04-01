@@ -9,7 +9,7 @@ body.onload = function(){
    })
 };
 
-
+ 
 //gets info from airtable
 var Airtable = require('airtable');
 Airtable.configure({
