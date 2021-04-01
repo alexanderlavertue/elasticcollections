@@ -51,6 +51,7 @@ function gotAllBooks(err) {
   // call functions to log and show the books
   consoleLogBooks();
   showinfo();
+  showword();
 }
 
 // just loop through the books and console.log them
@@ -61,22 +62,45 @@ function consoleLogBooks() {
   });
 }
 
-//funtion works but is only bringing in one line from phrases. I need all of them.
+// creates div container to hold pictures and words which is appended to the .contain div
+var wordImage = document.createElement("div");
+wordImage.classList.add("wordimg");
+document.querySelector(".contain").appendChild(wordImage);
+//p tag for all the words which is appended to wordimage div
+var word = document.createElement("p");
+word.classList.add("word");
+wordImage.appendChild("word");
+word.innerHtML = record.get('word');
+//img tag for all the images which is appended to word image div
+var images = document.createElement("img")
+images.classList.add("img1")
+wordImage.appendChild("images")
+images.innerHtML = record.get('Image');
+
+
+// Puts all the phrases in the .maintext class 
 function showinfo() {
- record.forEach((record) => {
- document.querySelector(".maintext").innerHTML = record.fields.phrase;
- document.querySelector(".word").innerHTML = record.fields.word;
-   });
+  record.forEach((record, index, array) => {
+    if (index === array.length - 1) {
+      // if it is the last sentence, don't add a space
+      document.querySelector(".maintext").innerHTML += record.fields.phrase;
+    } else {
+      // if it is NOT the last sentence, add a space after the sentence
+      document.querySelector(".maintext").innerHTML += `${record.fields.phrase} `;
+    }
+  });
 }
 
 
 //funtion works but makes seperate p tags for each phrase. I want them to be in one big paragraph.
-// function showinfo() {
-//   console.log("showinfo()");
+// function showword() {
+//   console.log("showword()");
 //   record.forEach((record) => {
-//     const p = document.createElement("p");
-//     p.innerText = record.fields.phrase;
-//     document.body.appendChild(p);
-//     p.classList.add("u")
+//     const h1 = document.createElement("h1") 
+//     h1.innerText = record.fields.word;
+//     document.body.appendChild(h1);
+//     h1.classList.add("word")
+    
 //   });
 // }
+
