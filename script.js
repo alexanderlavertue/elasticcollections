@@ -80,12 +80,7 @@ function showinfo() {
     } else {
       // if it is NOT the last sentence, add a space after the sentence
       document.querySelector(".maintext").innerHTML += `${record.fields.phrase} `;
-    }
-  });
-}
-
-
-//Changes opacity of images.
+    //Changes opacity of images.
 var imgword = document.querySelectorAll('.wordimg') //change this to new class
 var test = document.getElementById('button'); //route to new button
 test.onclick = function myfunction() {
@@ -93,4 +88,19 @@ test.onclick = function myfunction() {
         img.style.opacity = "1";
     })
 };
+//Makes images positon random on page load
+var numbers = ['10%', '20', '30%', '40%', '50%', '60%', '70%', '80%', '0%', '5%']
+var body = document.querySelector("body")
+body.onload = function() {
+    imgword.forEach((img, i) => {
+        img.style.left = numbers[Math.floor((Math.random() * 10) + 1)];
+    })
+};
+
+      }
+  });
+}
+
+
+
 
