@@ -86,10 +86,10 @@ function showinfo() {
 
 
 //Changes opacity of images.
-var imgs = document.querySelectorAll('.wordimg') //change this to new class
+var imgword = document.querySelectorAll('.wordimg') //change this to new class
 var test = document.getElementById('button'); //route to new button
 test.onclick = function myfunction() {
-    imgs.forEach((img, i) => {
+    imgword.forEach((img, i) => {
         img.style.opacity = "1";
     })
 };
