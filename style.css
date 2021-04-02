@@ -83,7 +83,7 @@ position: fixed;
   .wordimg{
     position: relative;
     margin-bottom: 4rem;
-   
+   opacity: 0;
   }
 
   #button{
