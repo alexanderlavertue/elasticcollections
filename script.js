@@ -1,15 +1,3 @@
-var wordimg = document.querySelectorAll('.wordimg')
-var numbers = ['10%','20','30%', '40%', '50%', '60%', '70%', '80%', '0%', '5%'] 
-
-//Makes images positon random on page load
-var body = document.querySelector("body")
-body.onload = function(){
-   wordimg.forEach((img, i)=>{
-      img.style.left = numbers[Math.floor((Math.random() * 10) + 1)];
-   })
-};
-
- 
 //gets info from airtable
 var Airtable = require('airtable');
 Airtable.configure({
@@ -23,7 +11,7 @@ var base = new Airtable({ apiKey: "keyAp5mElEZBzvzF9" }).base(
 );
 
 //get the "books" table from the base, select ALL the records, and specify the functions that will receive the data
-base("ai").select({}).eachPage(gotPageOfBooks, gotAllBooks);
+base("ai").select({maxRecords: 100}).eachPage(gotPageOfBooks, gotAllBooks);
 
 // an empty array to hold our book data
 const record = [];
@@ -50,8 +38,11 @@ function gotAllBooks(err) {
 
   // call functions to log and show the books
   consoleLogBooks();
-  showinfo();
-  showword();
+  try {
+    showinfo();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 // just loop through the books and console.log them
@@ -62,24 +53,26 @@ function consoleLogBooks() {
   });
 }
 
-// creates div container to hold pictures and words which is appended to the .contain div
-var wordImage = document.createElement("div");
-wordImage.classList.add("wordimg");
-document.querySelector(".contain").appendChild(wordImage);
-//p tag for all the words which is appended to wordimage div
-var word = document.createElement("p");
-word.classList.add("word");
-wordImage.appendChild("word");
-word.innerHtML = record.get('word');
-//img tag for all the images which is appended to word image div
-var images = document.createElement("img")
-images.classList.add("img1")
-wordImage.appendChild("images")
-images.innerHtML = record.get('Image');
 
 
 // Puts all the phrases in the .maintext class 
 function showinfo() {
+  record.forEach((record) => {
+    // creates div container to hold pictures and words which is appended to the .contain div
+    var wordImage = document.createElement('div');
+    wordImage.classList.add('wordimg');
+    document.querySelector(".contain").appendChild(wordImage);
+    //p tag for all the words which is appended to wordimage div
+    var images = document.createElement('img')
+    images.classList.add('img1')
+    images.src = record.fields.Image[0].url;
+    wordImage.appendChild(images)
+    //img tag for all the images which is appended to word image div
+    var word = document.createElement('p');
+    word.classList.add('word');
+    wordImage.appendChild(word);
+    word.innerHTML = record.get('word');
+    });
   record.forEach((record, index, array) => {
     if (index === array.length - 1) {
       // if it is the last sentence, don't add a space
@@ -92,15 +85,12 @@ function showinfo() {
 }
 
 
-//funtion works but makes seperate p tags for each phrase. I want them to be in one big paragraph.
-// function showword() {
-//   console.log("showword()");
-//   record.forEach((record) => {
-//     const h1 = document.createElement("h1") 
-//     h1.innerText = record.fields.word;
-//     document.body.appendChild(h1);
-//     h1.classList.add("word")
-    
-//   });
-// }
+//Changes opacity of images.
+var imgs = document.querySelectorAll('.wordimg') //change this to new class
+var test = document.getElementById('button'); //route to new button
+test.onclick = function myfunction() {
+    imgs.forEach((img, i) => {
+        img.style.opacity = "1";
+    })
+};
 

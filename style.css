@@ -33,9 +33,34 @@ position: fixed;
     line-height: 4rem;
 }
 
-.img1{
+/*.typewriter  {
+  /*overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /*border-right: .15em solid orange; /* The typwriter cursor */
+  /*white-space: nowrap; /* Keeps the content on a single line */
+  /*margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  /*letter-spacing: .04em; /* Adjust as needed */
+  /*animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+/*@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color:black; }
+}*/
+
+
+.img1 {
     position: relative;
-    width: 50%;
+    width: 20rem;
+    margin-bottom: -2.3rem;
   }
 
   .word{
@@ -43,18 +68,75 @@ position: fixed;
     background-color: white;
     width: min-content;
     font-family: monospace821;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .contain{
     width: 100vw;
     height: 100vh;
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
+    top: 24.5rem;
   }
 
   .wordimg{
     position: relative;
     margin-bottom: 4rem;
+   
   }
+
+  #button{
+    position: absolute;
+  }
+
+  @media screen and (max-width: 1200px) {
+   .img1{
+     width: 18rem;
+   }
+   .maintext{
+     font-size: 3rem;
+     line-height: 3rem;
+   }
+
+   .contain{
+    top: 18.5rem;
+  }
+   
+}
+
+@media screen and (max-width: 755px) {
+  .img1{
+    width: 13rem;
+    margin-bottom: -1.8rem;
+  }
+  .maintext{
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .word {
+    font-size: 1.5rem;
+  }
+  .contain{
+    top: 12.5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .contain{
+    top: 12.6rem;
+  }
+  
+  .img1{
+    width: 10rem;
+    margin-bottom: -1.8rem;
+  }
+  .maintext{
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+  .word {
+    font-size: 1.5rem;
+  }
+}
+
