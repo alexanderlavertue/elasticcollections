@@ -86,16 +86,29 @@ var test = document.getElementById('button'); //route to new button
 test.onclick = function myfunction() {
     imgword.forEach((img, i) => {
         img.style.opacity = "1";
+
     })
 };
 //Makes images positon random on page load
 var numbers = ['10%', '20', '30%', '40%', '50%', '60%', '70%', '80%', '0%', '5%']
 var body = document.querySelector("body")
-body.onload = function() {
+imgword.forEach((img, i) => {
+  img.style.left = numbers[Math.floor(Math.random() * 10 + 1)];
+});
+
+var colors = ['#0033B7', '#000000', '#f20800', '#5c5b5b'];
+//var font = ['4rem', '4.25rem', '4.5rem', '5rem', '5.25rem', '5.5rem', '6rem', '6.25rem', '6.5rem', '7rem']
+var button = document.getElementById('button2'); //route to second button
+var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '65%','70%','75%','80%']
+var text = document.querySelector(".maintext");
+button.onclick = function() {
+    document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+    //text.style.fontSize = font[Math.floor((Math.random() * 10) + 1)];
     imgword.forEach((img, i) => {
-        img.style.left = numbers[Math.floor((Math.random() * 10) + 1)];
+        img.style.left = numbers[Math.floor((Math.random() * 15) + 1)];
     })
 };
+
 
       }
   });
