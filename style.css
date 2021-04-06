@@ -23,6 +23,7 @@ body{
     color: white;
     margin-top: 0rem;
     line-height: 4rem;
+    overflow: scroll;
 }
 
 
@@ -81,14 +82,14 @@ body{
     font-size: 2.8rem;
     text-align: left;
     top: 8.5rem;
-    left: 9rem;
+    left: 10%;
     z-index: 1;
   }
 
   #button2{
     position: absolute;
     z-index: 1;
-    position: absolute; 
+    position: fixed; 
     background-color: white;
     border: none;
     font-family: monospace821;
@@ -179,7 +180,7 @@ body{
   #button2{
     font-size: 1rem;
     top: 26.1rem;
-    left: 34%;
+    left: 8rem;
   }
 }
 }

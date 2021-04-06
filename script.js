@@ -52,7 +52,8 @@ function consoleLogBooks() {
     console.log("record:", record.fields);
   });
 }
-
+//where main text is stored
+var mtext="";
 
 
 // Puts all the phrases in the .maintext class 
@@ -73,14 +74,18 @@ function showinfo() {
     wordImage.appendChild(word);
     word.innerHTML = record.get('word');
     });
+   // gets all the phrases from airtable and put it in mtext varriable 
+   //also adds a space between each phrase 
   record.forEach((record, index, array) => {
     if (index === array.length - 1) {
-      // if it is the last sentence, don't add a space
-      document.querySelector(".maintext").innerHTML += record.fields.phrase;
+    
+      mtext += record.fields.phrase;
     } else {
-      // if it is NOT the last sentence, add a space after the sentence
-      document.querySelector(".maintext").innerHTML += `${record.fields.phrase} `;
-    //Changes opacity of images.
+
+   
+      mtext += `${record.fields.phrase} `;
+      
+      //Changes opacity of images.
 var imgword = document.querySelectorAll('.wordimg') //change this to new class
 var test = document.getElementById('button'); //route to new button
 test.onclick = function myfunction() {
@@ -95,15 +100,13 @@ var body = document.querySelector("body")
 imgword.forEach((img, i) => {
   img.style.left = numbers[Math.floor(Math.random() * 10 + 1)];
 });
-
-var colors = ['#0033B7', '#000000', '#f20800', '#5c5b5b'];
-//var font = ['4rem', '4.25rem', '4.5rem', '5rem', '5.25rem', '5.5rem', '6rem', '6.25rem', '6.5rem', '7rem']
-var button = document.getElementById('button2'); //route to second button
+//changes backround color and images position on button click
+var colors = ['#0033B7', '#000000', '#5c5b5b'];
+var button = document.getElementById('button2'); 
 var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '65%','70%','75%','80%']
 var text = document.querySelector(".maintext");
 button.onclick = function() {
     document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
-    //text.style.fontSize = font[Math.floor((Math.random() * 10) + 1)];
     imgword.forEach((img, i) => {
         img.style.left = numbers[Math.floor((Math.random() * 15) + 1)];
     })
@@ -112,6 +115,15 @@ button.onclick = function() {
 
       }
   });
+ //sets the length of the typewritter effect by equating the integer to length of the main text  
+ //sets how fast the letters will be typed out with the setTimeout funtion 
+    for(var i=0; i<mtext.length; i++){
+      setTimeout(addLetter,50*i,mtext[i])
+   }
+  //selects inner html of main text and gets every single letter 
+    function addLetter(letter){
+      document.querySelector(".maintext").innerHTML +=letter;
+    }
 }
 
 
