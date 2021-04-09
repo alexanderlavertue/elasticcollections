@@ -11,14 +11,14 @@ var base = new Airtable({ apiKey: "keyAp5mElEZBzvzF9" }).base(
 );
 
 //get the "books" table from the base, select ALL the records, and specify the functions that will receive the data
-base("ai").select({maxRecords: 100}).eachPage(gotPageOfBooks, gotAllBooks);
+base("ai").select({maxRecords: 100}).eachPage(gotPageOfai, gotAllai);
 
 // an empty array to hold our book data
 const record = [];
 
 // callback function that receives our data
-function gotPageOfBooks(records, fetchNextPage) {
-  console.log("gotPageOfBooks()");
+function gotPageOfai(records, fetchNextPage) {
+  console.log("gotPageOfai()");
   // add the records from this page to our books array
   record.push(...records);
   // request more pages
@@ -26,18 +26,18 @@ function gotPageOfBooks(records, fetchNextPage) {
 }
 
 // call back function that is called when all pages are loaded
-function gotAllBooks(err) {
-  console.log("gotAllBooks()");
+function gotAllai(err) {
+  console.log("gotAllai()");
 
   // report an error, you'd want to do something better than this in production
   if (err) {
-    console.log("error loading books");
+    console.log("error loading ai");
     console.error(err);
     return;
   }
 
   // call functions to log and show the books
-  consoleLogBooks();
+  consoleLogai();
   try {
     showinfo();
   } catch (error) {
@@ -46,8 +46,8 @@ function gotAllBooks(err) {
 }
 
 // just loop through the books and console.log them
-function consoleLogBooks() {
-  console.log("consoleLogBooks()");
+function consoleLogai() {
+  console.log("consoleLogai()");
   record.forEach((record) => {
     console.log("record:", record.fields);
   });
@@ -95,17 +95,20 @@ test.onclick = function myfunction() {
     })
 };
 //Makes images positon random on page load
-var numbers = ['10%', '20', '30%', '40%', '50%', '60%', '70%', '80%', '0%', '5%']
+var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '65%','45%','63%','54%']
 var body = document.querySelector("body")
 imgword.forEach((img, i) => {
   img.style.left = numbers[Math.floor(Math.random() * 10 + 1)];
 });
-//changes backround color and images position on button click
-var colors = ['#0033B7', '#000000', '#5c5b5b'];
+//changes backround color, images position,tracking of the maintext on button click
+var colors = ['#0033B7', '#000000', '#5c5b5b',];
 var button = document.getElementById('button2'); 
-var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '65%','70%','75%','80%']
+var maintxt = document.querySelector('.maintext')
+var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '65%','45%','63%','54%']
+var numberstwo = ['.1rem', '.2rem','.3rem', '.4rem','.5rem', '.6rem','.7rem', '.8rem', '.9rem', '1rem']
 var text = document.querySelector(".maintext");
 button.onclick = function() {
+    maintxt.style.letterSpacing = numberstwo[Math.floor((Math.random() * 10) + 1)];
     document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
     imgword.forEach((img, i) => {
         img.style.left = numbers[Math.floor((Math.random() * 15) + 1)];
@@ -115,10 +118,10 @@ button.onclick = function() {
 
       }
   });
- //sets the length of the typewritter effect by equating the integer to length of the main text  
+ //types out each letter inside main text  
  //sets how fast the letters will be typed out with the setTimeout funtion 
     for(var i=0; i<mtext.length; i++){
-      setTimeout(addLetter,50*i,mtext[i])
+      setTimeout(addLetter,30*i,mtext[i])
    }
   //selects inner html of main text and gets every single letter 
     function addLetter(letter){

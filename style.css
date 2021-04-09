@@ -8,10 +8,10 @@ font-family: monospace821;
 src: url("Bitstream - Monospac821 BT Roman.woff2") ;
 }
 
+
 body{
     background-color: #0033B7;
     overflow-x: hidden;
-    margin-left: -1;
 }
 
 
@@ -24,6 +24,7 @@ body{
     margin-top: 0rem;
     line-height: 4rem;
     overflow: scroll;
+    margin-right: -.7rem;
 }
 
 
@@ -44,12 +45,14 @@ body{
   }
 
   .contain{
-    width: 100vw;
+    width:100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    top: 20.5rem;
+    top: 0rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .wordimg{
@@ -84,6 +87,26 @@ body{
     top: 8.5rem;
     left: 10%;
     z-index: 1;
+    animation: button 300s 1 ;
+    animation-timing-function: step-start;   
+    animation-delay:20s;
+  }
+    
+  
+
+  @keyframes button {
+    0%{
+      opacity: 0%;
+    }
+    
+    50%{
+       opacity: 100%;
+    }
+     
+    100%{
+      opacity: 0%;
+    }
+
   }
 
   #button2{
@@ -102,7 +125,7 @@ body{
 
   @media screen and (max-width: 1200px) {
    .img1{
-     width: 18rem;
+     width: 13rem;
    }
    .maintext{
      font-size: 3rem;
@@ -110,8 +133,9 @@ body{
    }
 
    .contain{
-    top: 18.5rem;
-    width: 80vw;
+
+    width: 100%;
+    margin-right: 1rem;
   }
 
   #button{
@@ -128,19 +152,18 @@ body{
 
 @media screen and (max-width: 755px) {
   .img1{
-    width: 13rem;
-    margin-bottom: -1.8rem;
+    width: 10rem;
+    margin-bottom: -1.3rem;
   }
   .maintext{
     font-size: 2rem;
     line-height: 2rem;
   }
   .word {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .contain{
-    top: 12.5rem;
-    width: 70vw;
+    width: 98%;
   }
   #button{
     font-size: 1.5rem;
@@ -157,20 +180,20 @@ body{
 
 @media screen and (max-width: 375px) {
   .contain{
-    top: 12.6rem;
-    width: 65vw;
+    width: 100%;
   }
   
   .img1{
-    width: 10rem;
-    margin-bottom: -1.8rem;
+    width: 7rem;
+    margin-bottom: -.9rem;
   }
   .maintext{
     font-size: 1.8rem;
     line-height: 1.8rem;
   }
   .word {
-    font-size: 1.5rem;
+    font-size: .7rem;
+
   }
   #button{
     font-size: 1rem;
@@ -183,5 +206,5 @@ body{
     left: 8rem;
   }
 }
-}
+
 
