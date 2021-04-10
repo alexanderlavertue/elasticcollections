@@ -95,7 +95,7 @@ test.onclick = function myfunction() {
     })
 };
 //Makes images positon random on page load
-var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '65%','45%','63%','54%']
+var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '62%','45%','60%','54%']
 var body = document.querySelector("body")
 imgword.forEach((img, i) => {
   img.style.left = numbers[Math.floor(Math.random() * 10 + 1)];
@@ -104,7 +104,7 @@ imgword.forEach((img, i) => {
 var colors = ['#0033B7', '#000000', '#5c5b5b',];
 var button = document.getElementById('button2'); 
 var maintxt = document.querySelector('.maintext')
-var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '65%','45%','63%','54%']
+var numbers = ['5%','10%','15%','20%','25%','30%','35%','40%','45%','50%','55%', '62%','45%','60%','54%']
 var numberstwo = ['.1rem', '.2rem','.3rem', '.4rem','.5rem', '.6rem','.7rem', '.8rem', '.9rem', '1rem']
 var text = document.querySelector(".maintext");
 button.onclick = function() {
