@@ -12,6 +12,7 @@ src: url("Bitstream - Monospac821 BT Roman.woff2") ;
 body{
     background-color: #022A90;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: auto;
 }
 
 
@@ -21,10 +22,9 @@ body{
     font-size: 4rem;
     text-transform: uppercase;
     color: white;
-    margin-top: 0rem;
+    margin:.5rem;
     line-height: 4rem;
     overflow: scroll;
-    
 }
 
 body::-webkit-scrollbar {
@@ -203,11 +203,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 375px) {
-
-  
+ 
   .imgs{
     width: 7rem;
-    margin-bottom: -.9rem;
+    margin-bottom: -1rem;
   }
   .maintext{
     font-size: 1.8rem;
@@ -227,6 +226,9 @@ body::-webkit-scrollbar-thumb {
     top: 22.1rem;
     left: 8rem;
   }
+
+  
+ 
 }
 
 
