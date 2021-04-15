@@ -10,7 +10,7 @@ src: url("Bitstream - Monospac821 BT Roman.woff2") ;
 
 
 body{
-    background-color: #0033B7;
+    background-color: #022A90;
     overflow-x: hidden;
 }
 
@@ -91,6 +91,10 @@ body::-webkit-scrollbar-thumb {
    100%{
      opacity: 100%;
    }
+  }
+
+  #button:focus{
+    opacity: 0%;
   }
 
   #button{
