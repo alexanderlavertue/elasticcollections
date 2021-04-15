@@ -60,7 +60,7 @@ function consoleLogai() {
 var mtext = "";
 
 
-// Puts all the phrases in the .maintext class 
+// Creates classes and brings in images, and words from airtable
 function showinfo() {
     record.forEach((record) => {
         // creates div container to hold pictures and words which is appended to the .contain div
@@ -69,7 +69,7 @@ function showinfo() {
         document.querySelector(".contain").appendChild(wordImage);
         //p tag for all the words which is appended to wordimage div
         var images = document.createElement('img')
-        images.classList.add('img1')
+        images.classList.add('imgs')
         images.src = record.fields.Image[0].url;
         wordImage.appendChild(images)
         //img tag for all the images which is appended to word image div
@@ -78,7 +78,7 @@ function showinfo() {
         wordImage.appendChild(word);
         word.innerHTML = record.get('word');
     });
-    // gets all the phrases from airtable and put it in mtext varriable 
+    // gets all the phrases from airtable and put it in mtext var 
     //also adds a space between each phrase 
     record.forEach((record, index, array) => {
         if (index === array.length - 1) {

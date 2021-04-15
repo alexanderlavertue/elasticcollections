@@ -46,7 +46,7 @@ body::-webkit-scrollbar-thumb {
 
 
 
-.img1 {
+.imgs {
     position: relative;
     width: 20rem;
     margin-bottom: -2.3rem;
@@ -77,7 +77,7 @@ body::-webkit-scrollbar-thumb {
    opacity: 0;
   }
 
-  .img1:hover{
+  .imgs:hover{
    animation: blink 1s infinite;
   }
 
@@ -111,7 +111,9 @@ body::-webkit-scrollbar-thumb {
     animation: button 120s step-start 6.7s 1;
   }
     
-  
+  #button:hover{
+    cursor: pointer;
+  }
 
   @keyframes button {
     0%{
@@ -144,8 +146,12 @@ body::-webkit-scrollbar-thumb {
     animation: button 1200s step-start 23.5s 1;
   }
 
+  #button2:hover{
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 1200px) {
-   .img1{
+   .imgs{
      width: 13rem;
    }
    .maintext{
@@ -171,7 +177,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 755px) {
-  .img1{
+  .imgs{
     width: 10rem;
     margin-bottom: -1.3rem;
   }
@@ -199,7 +205,7 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 375px) {
 
   
-  .img1{
+  .imgs{
     width: 7rem;
     margin-bottom: -.9rem;
   }
