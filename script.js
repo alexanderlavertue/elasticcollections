@@ -105,7 +105,7 @@ function showinfo() {
             });
             //changes backround color, images position,tracking of the maintext on button click
             var body = document.querySelector("body")
-            var colors = ['#022A90', '#8C8C8C', '#000000', '#535675','#4C6561','#42383f' ];
+            var colors = ['#022A90', '#8C8C8C', '#000000', '#535675', '#4C6561', '#42383f'];
             var button = document.getElementById('button2');
             var maintxt = document.querySelector('.maintext')
             var numbers = ['5%', '10%', '15%', '20%', '25%', '30%', '35%', '40%', '45%', '50%', '55%', '62%', '45%', '60%', '54%']
